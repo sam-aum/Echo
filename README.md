@@ -30,6 +30,6 @@
 ![Quote_page](https://user-images.githubusercontent.com/95770704/157080356-9605e10b-a556-4b77-883d-09b10d6c519c.png)
 
 ## Tech Used 
-Python
-Django
-Postgresql
+- Python
+- Django
+- Postgresql
