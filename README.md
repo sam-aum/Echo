@@ -1,6 +1,6 @@
 # ECHO
 ## Description
-- Ekko allows users to create an account, write and save quotes, and share them with others 
+- Echo allows users to create an account, write and save quotes, and share them with others 
 ## MVP
 - User creation
 - Nav bar
