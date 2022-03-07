@@ -2,13 +2,13 @@
 ## Description
     Ekko allows users to create an account, write and save quotes, and share them with others 
 ## MVP
-    *   User creation
-    *   Nav bar
-    * 	Add text 
-        *   User name
-        *   Quote 
-        *   Citation
-    *   CRUD
+- User creation
+- Nav bar
+- Add text 
+    - User name
+    - Quote 
+    - Citation
+    - CRUD
     
 
 ## Stretch Goals
