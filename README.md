@@ -15,10 +15,10 @@
 - Public quote area
     - Able to follow people ?
     - See followed people’s quotes
-- Organize Quotes 
-- Comment section
+- Comment section 
 - Like section
 - Save section
+- Organize Quotes 
 
 
 ## Login Page
@@ -33,3 +33,21 @@
 - Python
 - Django
 - Postgresql
+
+
+model 1 
+* user
+
+favorite quotes
+* many to many
+
+model 2
+* quote
+
+wire 
+
+ERD
+* user
+* Quotes
+* Comments
+* Saved Quotes
