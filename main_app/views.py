@@ -2,7 +2,9 @@ from django.shortcuts import render
 from django.views import View
 from django.http import HttpResponse
 from django.views.generic.base import TemplateView
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic import DetailView
+from django.urls import reverse
 # from django.contrib import admin
 from .models import Ekko
 
@@ -45,3 +47,16 @@ class EkkoCreate(CreateView):
     fields = ['user', 'ekko', 'source', 'verified_ekko']
     template_name = "ekko_create.html"
     success_url = "/ekkos/"
+
+# class EkkotDetail(DetailView):
+#     model = Ekko
+#     template_name = "ekko_detail.html"
+    # this is can used for comments
+
+class EkkoUpdate(UpdateView):
+    model = Ekko
+    fields = ['user', 'ekko', 'source', 'verified_ekko']
+    template_name = "ekko_update.html"
+    success_url = "/ekkos/"
+    # def get_success_url(self):
+    #     return reverse('artist_detail', kwargs={'pk': self.object.pk})

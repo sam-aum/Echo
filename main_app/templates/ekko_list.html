@@ -24,7 +24,7 @@
 <div class="gallery">
 
   {% for ekko in ekkos %}
-  <a href="">
+  <a href="{% url 'ekko_update' ekko.pk %}">
     <div class="card">
 
       <div class="card-image">
