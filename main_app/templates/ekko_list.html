@@ -5,6 +5,7 @@
 
 <h1 class="title pt-5">{{ header }}</h1>
 
+<!-- search bar -->
 <form class="mb-5" method="get">
   <div class="field has-addons">
     <div class="control">
@@ -19,14 +20,22 @@
   <a class="button is-dark" href="{% url 'ekko_list' %}">Clear Search</a>
 </form>
 
+<!-- create button -->
 <a class="button is-dark" href="{% url 'ekko_create' %}">Create an Ekko</a>
 
+<!-- Ekko Card -->
 <div class="gallery">
 
   {% for ekko in ekkos %}
   <a href="{% url 'ekko_update' ekko.pk %}">
     <div class="card">
+      
+      <!-- User -->
+      <div class="card-header">
+        <p class="card-header-title">{{ekko.user}}</p>         
+      </div>
 
+      <!-- Ekko -->
       <div class="card-image">
         <!-- <figure class="image is-square"> -->
           <!-- <img src="{{ekko.image}}" alt="{{ekko.name}}" /> -->
@@ -34,34 +43,37 @@
         <!-- </figure> -->
       </div>
 
+      <!-- Sourse -->
       <div class="card-header">
         <p class="card-header-title">{{ekko.source}}</p>
+        
+      </div>
+
+      <!-- Verification -->
+      <div class="detail__name">
+        {% if ekko.verified_ekko %}
+        <div class="icon-text">
+          <span class="icon has-text-info">
+            <i class="fas fa-check-circle"></i>
+          </span>
+          <span>Verified</span>
+        </div>
+        {% endif %}
       </div>
 
     </div>
   </a>
 
-  <div class="detail__name">
-    {% if artist.verified_artist %}
-    <div class="icon-text">
-      <span class="icon has-text-info">
-        <i class="fas fa-check-circle"></i>
-      </span>
-      <span>Verified</span>
-    </div>
-    {% endif %}
-    <h1 class="title">{{artist.name}}</h1>
-  </div>
 
-
+  <!-- edit and delete buttons -->
   <div class="detail__container">
     <div class="buttons">
-      <a href="" class="button is-info">
+      <a href="{% url 'ekko_update' ekko.pk %}" class="button is-info">
         <span class="icon">
           <i class="fas fa-edit"></i>
         </span>
       </a>
-      <a href="" class="button is-danger">
+      <a href="{% url 'ekko_delete' ekko.pk %}" class="button is-danger">
         <span class="icon">
           <i class="fas fa-trash-alt"></i>
         </span>
@@ -70,12 +82,6 @@
     
   </div>
 
-  <a href="{% url 'ekko_delete' ekko.pk %}" class="button is-danger"
-    >Delete
-    <span class="icon">
-      <i class="fas fa-trash-alt"></i>
-    </span>
-  </a>
 
   {% empty %}
   <article class="message">
