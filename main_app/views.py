@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views import View
 from django.http import HttpResponse
 from django.views.generic.base import TemplateView
+from django.views.generic.edit import CreateView
 # from django.contrib import admin
 from .models import Ekko
 
@@ -24,12 +25,12 @@ class EkkoList(TemplateView):
         context["ekkos"] = Ekko.objects.all()
 
         name = self.request.GET.get('name')
-    #     print(name)
+  
         if name != None:
             context['ekkos'] = Ekko.objects.filter(source__icontains=name, user=self.request.user)
             context['header'] = f"Results for: {name}"
-    #         context['artists'] = Artist.objects.filter(name__icontains=name, user=self.request.user)
-    #         
+    
+      
         else:
             context['ekkos'] = Ekko.objects.all()
     #         context['artists'] = Artist.objects.filter(user=self.request.user)
@@ -38,3 +39,9 @@ class EkkoList(TemplateView):
         
     #     # query the database - Model.objects.query_method()
         return context 
+
+class EkkoCreate(CreateView):
+    model = Ekko
+    fields = ['user', 'ekko', 'source', 'verified_ekko']
+    template_name = "ekko_create.html"
+    success_url = "/ekkos/"
