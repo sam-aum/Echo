@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views import View
 from django.http import HttpResponse
 from django.views.generic.base import TemplateView
-from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import DetailView
 from django.urls import reverse
 # from django.contrib import admin
@@ -60,3 +60,10 @@ class EkkoUpdate(UpdateView):
     success_url = "/ekkos/"
     # def get_success_url(self):
     #     return reverse('artist_detail', kwargs={'pk': self.object.pk})
+
+class EkkoDelete(DeleteView):
+    model = Ekko
+    template_name = "ekko_delete.html"
+    success_url = "/ekkos/"
+    # def get_success_url(self):
+    #     return reverse('ekko_delete', kwargs={'pk': self.object.pk})

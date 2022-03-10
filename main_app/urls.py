@@ -11,4 +11,5 @@ urlpatterns = [
     # path('artists/<int:pk>/', views.ArtistDetail.as_view(), name="artist_detail"),
         # this can be comments
     path('ekkos/<int:pk>/update',views.EkkoUpdate.as_view(), name="ekko_update"),
+    path('ekkos/<int:pk>/delete',views.EkkoDelete.as_view(), name="ekko_delete"),
 ]

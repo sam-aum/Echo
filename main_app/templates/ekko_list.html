@@ -40,7 +40,43 @@
 
     </div>
   </a>
-  
+
+  <div class="detail__name">
+    {% if artist.verified_artist %}
+    <div class="icon-text">
+      <span class="icon has-text-info">
+        <i class="fas fa-check-circle"></i>
+      </span>
+      <span>Verified</span>
+    </div>
+    {% endif %}
+    <h1 class="title">{{artist.name}}</h1>
+  </div>
+
+
+  <div class="detail__container">
+    <div class="buttons">
+      <a href="" class="button is-info">
+        <span class="icon">
+          <i class="fas fa-edit"></i>
+        </span>
+      </a>
+      <a href="" class="button is-danger">
+        <span class="icon">
+          <i class="fas fa-trash-alt"></i>
+        </span>
+      </a>
+    </div>
+    
+  </div>
+
+  <a href="{% url 'ekko_delete' ekko.pk %}" class="button is-danger"
+    >Delete
+    <span class="icon">
+      <i class="fas fa-trash-alt"></i>
+    </span>
+  </a>
+
   {% empty %}
   <article class="message">
     <div class="message-header">
