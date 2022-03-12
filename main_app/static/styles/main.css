@@ -7,7 +7,7 @@ body {
   h1,
   h2,
   h3 {
-    color: #ffffff;
+    color: rgba(112,219,203,255);
   }
   
   .container {
@@ -35,10 +35,7 @@ body {
     z-index: 10;
   }
   
-  p {
-    font-size: 12px;
-    /* color: rgba(112,219,203,255); */
-  }
+
   
   img {
     width: 100%;
@@ -58,10 +55,30 @@ body {
     border: rgba(112,219,203,255);
 }
 
-.card-quote{
-    font-size: 20px;
+
+/* user */
+.card-header {
+  padding: 10px;
+}
+.card-user{
+  font-size: 20px;
+  font-weight: bold;
 }
 
-.card-image {
+/* quote */
+.card-quote-box {
     padding: 20px;
+}
+.card-quote{
+    font-size: 25px;
+}
+
+/* source */
+.card-source-box{
+    padding: 10px;
+}
+.card-source{
+    font-size: 20px;
+    font-weight: bold;
+    font-style: oblique;
 }

@@ -7,7 +7,7 @@ class Ekko(models.Model):
 
     # name = models.CharField(max_length=100)
     
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=User)
     ekko = models.TextField(max_length=500)
     source = models.CharField(max_length=250, default='anonymous')
     verified_ekko = models.BooleanField(default=False)

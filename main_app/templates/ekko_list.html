@@ -26,16 +26,35 @@
 <div class="gallery">
 
   {% for ekko in ekkos %}
-  <a href="{% url 'ekko_update' ekko.pk %}">
+  <!-- <a href="{% url 'ekko_update' ekko.pk %}"> -->
     <div class="card">
       
       <!-- User -->
       <div class="card-header">
-        <p class="card-header-title">{{ekko.user}}</p>         
+
+        <!-- User Name -->
+        <p class="card-user">{{ekko.user}}</p>
+
+        <!-- edit and delete buttons -->
+        <div class="detail__container">
+          <div class="buttons">
+            <a href="{% url 'ekko_update' ekko.pk %}" class="button is-info">
+              <span class="icon">
+                <i class="fas fa-edit"></i>
+              </span>
+            </a>
+            <a href="{% url 'ekko_delete' ekko.pk %}" class="button is-danger">
+              <span class="icon">
+                <i class="fas fa-trash-alt"></i>
+              </span>
+            </a>
+          </div>
+        </div>   
+              
       </div>
 
       <!-- Ekko -->
-      <div class="card-image">
+      <div class="card-quote-box">
         <!-- <figure class="image is-square"> -->
           <!-- <img src="{{ekko.image}}" alt="{{ekko.name}}" /> -->
           <p class="card-quote">{{ekko.ekko}}</p>
@@ -43,43 +62,33 @@
       </div>
 
       <!-- Sourse -->
-      <div class="card-header">
-        <p class="card-header-title">{{ekko.source}}</p>
+      <div class="card-source-box">
+
+        <!-- Source Name -->
+        <p class="card-source">{{ekko.source}}</p>
         
-      </div>
-
-      <!-- Verification -->
-      <div class="detail__name">
-        {% if ekko.verified_ekko %}
-        <div class="icon-text">
-          <span class="icon has-text-info">
-            <i class="fas fa-check-circle"></i>
-          </span>
-          <span>Verified</span>
+        <!-- Verification -->
+        <div class="detail__name">
+          {% if ekko.verified_ekko %}
+          <div class="icon-text">
+            <span class="icon has-text-info">
+              <i class="fas fa-check-circle"></i>
+            </span>
+            <span>Verified</span>
+          </div>
+          {% endif %}
         </div>
-        {% endif %}
+
+        
+
       </div>
 
+
     </div>
-  </a>
+  <!-- </a> -->
 
 
-  <!-- edit and delete buttons -->
-  <div class="detail__container">
-    <div class="buttons">
-      <a href="{% url 'ekko_update' ekko.pk %}" class="button is-info">
-        <span class="icon">
-          <i class="fas fa-edit"></i>
-        </span>
-      </a>
-      <a href="{% url 'ekko_delete' ekko.pk %}" class="button is-danger">
-        <span class="icon">
-          <i class="fas fa-trash-alt"></i>
-        </span>
-      </a>
-    </div>
-    
-  </div>
+  
 
 
   {% empty %}

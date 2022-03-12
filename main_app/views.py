@@ -24,8 +24,7 @@ class EkkoList(TemplateView):
 
     def get_context_data(self, **kwargs): 
         context = super().get_context_data(**kwargs)
-        context["ekkos"] = Ekko.objects.all()
-
+        # context["ekkos"] = Ekko.objects.all()
         name = self.request.GET.get('name')
   
         if name != None:
@@ -34,8 +33,8 @@ class EkkoList(TemplateView):
     
       
         else:
-            context['ekkos'] = Ekko.objects.all()
-    #         context['artists'] = Artist.objects.filter(user=self.request.user)
+            # context['ekkos'] = Ekko.objects.all()
+            context['ekkos'] = Ekko.objects.filter(user=self.request.user)
             context['header'] = "Your Ekkos"
 
         
@@ -46,9 +45,16 @@ class EkkoCreate(CreateView):
     model = Ekko
     fields = ['user', 'ekko', 'source', 'verified_ekko']
     template_name = "ekko_create.html"
-    success_url = "/ekkos/"
 
-# class EkkotDetail(DetailView):
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super(EkkoCreate, self).form_valid(form)
+
+    def get_success_url(self):
+        print(self.kwargs)
+        return reverse('ekko_list')
+
+# class EkkoDetail(DetailView):
 #     model = Ekko
 #     template_name = "ekko_detail.html"
     # this is can used for comments
