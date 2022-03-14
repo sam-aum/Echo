@@ -69,9 +69,9 @@ class EkkoUpdate(UpdateView):
     model = Ekko
     fields = ['user', 'ekko', 'source', 'verified_ekko']
     template_name = "ekko_update.html"
-    success_url = "/ekkos/"
-    # def get_success_url(self):
-    #     return reverse('artist_detail', kwargs={'pk': self.object.pk})
+    # success_url = "/ekkos/"
+    def get_success_url(self):
+        return reverse('ekko_detail', kwargs={'pk': self.object.pk})
 
 class EkkoDelete(DeleteView):
     model = Ekko
