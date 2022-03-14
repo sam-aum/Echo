@@ -60,10 +60,10 @@ class EkkoCreate(CreateView):
         print(self.kwargs)
         return reverse('ekko_list')
 
-# class EkkoDetail(DetailView):
-#     model = Ekko
-#     template_name = "ekko_detail.html"
-    # this is can used for comments
+class EkkoDetail(DetailView):
+    model = Ekko
+    template_name = "ekko_detail.html"
+  
 
 class EkkoUpdate(UpdateView):
     model = Ekko

@@ -8,9 +8,9 @@ urlpatterns = [
     path('signin/', views.SignIn.as_view(), name="sign_in"),
     path('ekkos/', views.EkkoList.as_view(), name="ekko_list"),
     path('ekkos/new/', views.EkkoCreate.as_view(), name="ekko_create"),
-    # path('artists/<int:pk>/', views.ArtistDetail.as_view(), name="artist_detail"),
-        # this can be comments
+    path('ekkos/<int:pk>/', views.EkkoDetail.as_view(), name="ekko_detail"),
     path('ekkos/<int:pk>/update',views.EkkoUpdate.as_view(), name="ekko_update"),
     path('ekkos/<int:pk>/delete',views.EkkoDelete.as_view(), name="ekko_delete"),
     path('accounts/signup/', views.Signup.as_view(), name="signup"),
+    # path('ekkos/<int:pk>/comment',views.EkkoComment.as_view(), name="ekko_comment"),
 ]
