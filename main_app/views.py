@@ -8,6 +8,8 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse
 from django.shortcuts import redirect
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator   
 # from django.contrib import admin
 from .models import Ekko
 
@@ -22,6 +24,7 @@ class About(TemplateView):
 class SignIn(TemplateView):
     template_name = "sign_in.html"
 
+@method_decorator(login_required, name='dispatch')
 class EkkoList(TemplateView):
     template_name = "ekko_list.html"
 

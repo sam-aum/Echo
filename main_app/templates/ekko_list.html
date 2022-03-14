@@ -22,6 +22,8 @@
 <!-- create button -->
 <a class="button  create-button" href="{% url 'ekko_create' %}">Create an Ekko</a>
 
+
+
 <!-- Ekko Card -->
 <div class="gallery">
 
@@ -31,32 +33,8 @@
       
       <!-- User -->
       <div class="card-header">
-
         <!-- User Name -->
         <p class="card-user">{{ekko.user}}</p>
-
-        <!-- edit and delete buttons -->
-        <div class="detail__container">
-          <div class="buttons">
-            <a href="{% url 'ekko_update' ekko.pk %}" class="button is-info">
-              <span class="icon">
-                <i class="fas fa-edit"></i>
-              </span>
-            </a>
-            <a href="{% url 'ekko_delete' ekko.pk %}" class="button is-danger">
-              <span class="icon">
-                <i class="fas fa-trash-alt"></i>
-              </span>
-            </a>
-            <a href="{% url 'ekko_delete' ekko.pk %}" class="button is-info is-small">
-              <span class="icon">
-                <i class="far fa-comment"></i>
-              </span>
-            </a>
-            	
-          </div>
-        </div>   
-              
       </div>
 
       <!-- Ekko -->
@@ -84,10 +62,30 @@
           </div>
           {% endif %}
         </div>
+      </div>
 
+      <!-- edit and delete buttons -->
+      <div class="detail__container">
+        <div class="buttons class-buttons">
+          <a href="{% url 'ekko_delete' ekko.pk %}" class="button is-info is-small">
+            <span class="icon">
+              <i class="far fa-comment"></i>
+            </span>
+          </a>     	
+          <a href="{% url 'ekko_update' ekko.pk %}" class="button is-info is-small">
+            <span class="icon">
+              <i class="fas fa-edit"></i>
+            </span>
+          </a>
+          <a href="{% url 'ekko_delete' ekko.pk %}" class="button is-danger is-small">
+            <span class="icon">
+              <i class="fas fa-trash-alt"></i>
+            </span>
+          </a>
+        </div>
+      </div>   
         
 
-      </div>
 
 
     </div>
