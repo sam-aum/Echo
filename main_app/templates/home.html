@@ -63,16 +63,13 @@
             
             <!-- User -->
             <div class="card-header">
-            <!-- User Name -->
-            <p class="card-user">{{ekko.user}}</p>
+                <!-- User Name -->
+                <p class="card-user">{{ekko.user}}</p>
             </div>
     
             <!-- Ekko -->
             <div class="card-quote-box">
-            <!-- <figure class="image is-square"> -->
-                <!-- <img src="{{ekko.image}}" alt="{{ekko.name}}" /> -->
                 <p class="card-quote">{{ekko.ekko}}</p>
-            <!-- </figure> -->
             </div>
     
             <!-- Sourse -->
@@ -81,40 +78,35 @@
                 <!-- Source Name -->
                 <p class="card-source">
                     {{ekko.source}}
+
                     {% if ekko.verified_ekko %}
-                    
                     <span class="icon has-text-info">
                         <i class="fas fa-check-circle"></i>
                     </span>
+
                     <span>Verified</span>
-                    
                     {% endif %}
                 </p>
                         
             </div>
     
             <!-- edit and delete buttons -->
-            <div class="detail__container">
-            <div class="buttons class-buttons">
-                <a href="{% url 'ekko_delete' ekko.pk %}" class="button is-info is-small">
-                <span class="icon">
-                    <i class="far fa-comment"></i>
-                    <!-- <i class="fa-solid fa-comment"></i> -->
-                </span>
+          
+            <div class="class-buttons">
+                <!-- comment -->
+                <a href="{% url 'ekko_delete' ekko.pk %}">
+                    <span class="material-icons">chat_bubble_outline</span>
                 </a>     	
-                <a href="{% url 'ekko_update' ekko.pk %}" class="button is-info is-small">
-                <span class="icon">
-                    <i class="fas fa-edit"></i>
-                </span>
-                </a>
-                <a href="{% url 'ekko_delete' ekko.pk %}" class="button is-danger is-small">
-                <span class="icon">
-                    <i class="fas fa-trash-alt"></i>
-                </span>
-                </a>
+                <!-- bookmark -->
+                <a href="{% url 'ekko_update' ekko.pk %}">
+                    <span class="material-icons">bookmark_border</span>
+                </a>  
+                <!-- like -->
+                <a href="{% url 'ekko_update' ekko.pk %}">
+                <span class="material-icons">favorite_border</span>
+                </a>  
             </div>
-            </div>   
-    
+            
         </div>
         </a>
     
@@ -144,7 +136,7 @@
         <div></div>
     {% endif %}
 
-    
+
     <!-- search bar -->
     <form class="search" method="get">
 

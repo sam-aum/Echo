@@ -11,97 +11,100 @@
 
 <!-- Feed -->
 <div class="feed">
-  <div class="feed_header">
-      <h1 class="title pt-5">{{ header }}</h1>
-  </div>
+    <div class="feed_header">
+        <h1 class="title pt-5">{{ header }}</h1>
+    </div>
 
-  <div class="ekkobox">
-      <form>
-          <div class="ekkobox_input">
-              <input type="text" placeholder="What's Happening">
-          </div>
+    <div class="ekkobox">
+        <form>
+            <div class="ekkobox_input">
+                <input type="text" placeholder="What's Happening">
+            </div>
 
-          <!-- create button -->
-          <a class="button  create-button" href="{% url 'ekko_create' %}">Create an Ekko</a>
-      </form>
-  </div>
+            <!-- create button -->
+            <a class="button  create-button" href="{% url 'ekko_create' %}">Create an Ekko</a>
+        </form>
+    </div>
 
 
-  <!-- Ekko Card -->
-  <div class="gallery">
+    <!-- Ekko Card -->
+    <div class="gallery">
 
-      {% for ekko in ekkos %}
-      <a href="{% url 'ekko_detail' ekko.pk %}">
-      <div class="card">
-          
-          <!-- User -->
-          <div class="card-header">
-          <!-- User Name -->
-          <p class="card-user">{{ekko.user}}</p>
-          </div>
-  
-          <!-- Ekko -->
-          <div class="card-quote-box">
-          <!-- <figure class="image is-square"> -->
-              <!-- <img src="{{ekko.image}}" alt="{{ekko.name}}" /> -->
-              <p class="card-quote">{{ekko.ekko}}</p>
-          <!-- </figure> -->
-          </div>
-  
-          <!-- Sourse -->
-          <div class="card-source-box">
-  
-          <!-- Source Name -->
-          <p class="card-source">{{ekko.source}}</p>
-          
-          <!-- Verification -->
-          <div class="detail__name">
-              {% if ekko.verified_ekko %}
-              <div class="icon-text">
-              <span class="icon has-text-info">
-                  <i class="fas fa-check-circle"></i>
-              </span>
-              <span>Verified</span>
-              </div>
-              {% endif %}
-          </div>
-          </div>
-  
-          <!-- edit and delete buttons -->
-          <div class="detail__container">
-          <div class="buttons class-buttons">
-              <a href="{% url 'ekko_delete' ekko.pk %}" class="button is-info is-small">
-              <span class="icon">
-                  <i class="far fa-comment"></i>
-                  <!-- <i class="fa-solid fa-comment"></i> -->
-              </span>
-              </a>     	
-              <a href="{% url 'ekko_update' ekko.pk %}" class="button is-info is-small">
-              <span class="icon">
-                  <i class="fas fa-edit"></i>
-              </span>
-              </a>
-              <a href="{% url 'ekko_delete' ekko.pk %}" class="button is-danger is-small">
-              <span class="icon">
-                  <i class="fas fa-trash-alt"></i>
-              </span>
-              </a>
-          </div>
-          </div>   
-  
-      </div>
-      </a>
-  
+        {% for ekko in ekkos %}
+        <a href="{% url 'ekko_detail' ekko.pk %}">
+        <div class="card">
+            
+            <!-- User -->
+            <div class="card-header">
+            <!-- User Name -->
+            <p class="card-user">{{ekko.user}}</p>
+            </div>
+    
+            <!-- Ekko -->
+            <div class="card-quote-box">
+            <!-- <figure class="image is-square"> -->
+                <!-- <img src="{{ekko.image}}" alt="{{ekko.name}}" /> -->
+                <p class="card-quote">{{ekko.ekko}}</p>
+            <!-- </figure> -->
+            </div>
+    
+            <!-- Sourse -->
+            <div class="card-source-box">
+    
+            <!-- Source Name -->
+            <p class="card-source">{{ekko.source}}</p>
+            
+            <!-- Verification -->
+            <div class="detail__name">
+                {% if ekko.verified_ekko %}
+                <div class="icon-text">
+                <span class="icon has-text-info">
+                    <i class="fas fa-check-circle"></i>
+                </span>
+                <span>Verified</span>
+                </div>
+                {% endif %}
+            </div>
+            </div>
+    
+            <!-- edit and delete buttons -->
+            
+            <div class="class-buttons">
+                <!-- comment -->
+                <a href="{% url 'ekko_delete' ekko.pk %}">
+                    <span class="material-icons">chat_bubble_outline</span>
+                </a>     	
+                <!-- bookmark -->
+                <a href="{% url 'ekko_update' ekko.pk %}">
+                    <span class="material-icons">bookmark_border</span>
+                </a>  
+                <!-- like -->
+                <a href="{% url 'ekko_update' ekko.pk %}">
+                <span class="material-icons">favorite_border</span>
+                </a>  
+                <!-- edit -->
+                <a href="{% url 'ekko_update' ekko.pk %}">
+                    <span class="material-icons">edit</span>
+                </a>
+                <!-- delete -->
+                <a href="{% url 'ekko_delete' ekko.pk %}">
+                    <span class="material-icons">delete</span>
+                </a>
+            </div> 
+            
+        </div>
+        </a>
+    
 
-      {% empty %}
-      <article class="message">
-      <div class="message-header">
-          <p>No Ekkos Available</p>
-      </div>
-      </article>
-  
-      {% endfor %}
-  </div>
+        {% empty %}
+        <article class="message">
+        <div class="message-header">
+            <p>No Ekkos Available</p>
+        </div>
+        </article>
+    
+        {% endfor %}
+    </div>
 
 </div>
 
@@ -116,7 +119,7 @@
     {% else %}
         <div></div>
     {% endif %}
-    
+
     <!-- search bar -->
     <form class="search" method="get">
 
@@ -145,9 +148,3 @@
 {% endblock %}
  
 
-<!-- icon -->
-<!-- fas fa-bookmark	&#xf02e;	 -->
-<!-- far fa-bookmark	&#xf02e; -->
-
-<!-- comment
-far fa-comment	&#xf075; -->

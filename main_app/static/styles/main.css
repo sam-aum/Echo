@@ -40,7 +40,7 @@ body {
   padding: 10px 20px;
 }
 .card-user{
-  font-size: 20px;
+  font-size: 22px;
   font-weight: bold;
 }
 
@@ -55,7 +55,7 @@ body {
 
 /* source */
 .card-source-box{
-    padding: 10px;
+    padding: 10px 20px;
 }
 .card-source{
     font-size: 20px;
@@ -63,14 +63,12 @@ body {
     font-style: oblique;
 }
 
-.class-buttons{
-  display: flex;
-  justify-content: space-between;
-  padding: 15px 35px;
-}
+
 
 
 /* sidebar */
+a { color: inherit; } 
+
 .sidebarOption{
   display: flex;
   align-items: center;
@@ -97,6 +95,10 @@ body {
 .sidebarOption.active{
   color: var(--ekko-color);
 }
+/* 
+a:active{
+  color: var(--ekko-color);
+} */
 
 .create-button-side{
   background-color: var(--ekko-color);
@@ -128,7 +130,7 @@ body{
 }
 
 
-a { color: inherit; } 
+
 
 
 /* Feed */
@@ -193,6 +195,12 @@ a { color: inherit; }
   height: 40px;
   margin-top: 20px;
   margin-left: auto;
+}
+
+.class-buttons{
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
 }
 
 /* post */
