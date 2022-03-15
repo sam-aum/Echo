@@ -10,6 +10,8 @@ from django.urls import reverse
 from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator   
+from django.db.models import Q
+
 # from django.contrib import admin
 from .models import Ekko, Comment
 
@@ -24,7 +26,7 @@ class Home(TemplateView):
             name = self.request.GET.get('name')
 
             if name != None:
-                context["ekkos"] = Ekko.objects.filter(source__icontains=name, ekko__icontains=name)
+                context["ekkos"] = Ekko.objects.filter(Q(source__icontains=name) | Q(ekko__icontains=name))
             else:
                 context["ekkos"] = Ekko.objects.all()
                 context['header'] = "Home"
