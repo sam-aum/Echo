@@ -100,6 +100,7 @@
                 <a href="{% url 'ekko_delete' ekko.pk %}" class="button is-info is-small">
                 <span class="icon">
                     <i class="far fa-comment"></i>
+                    <!-- <i class="fa-solid fa-comment"></i> -->
                 </span>
                 </a>     	
                 <a href="{% url 'ekko_update' ekko.pk %}" class="button is-info is-small">
@@ -114,17 +115,11 @@
                 </a>
             </div>
             </div>   
-            
-    
-    
     
         </div>
         </a>
     
-    
-        
-    
-    
+
         {% empty %}
         <article class="message">
         <div class="message-header">

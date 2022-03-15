@@ -116,6 +116,16 @@ body{
   padding-right: 20px;
 }
 
+.create-button-side{
+  background-color: var(--ekko-color);
+  border: none;
+  color: white;
+  font-weight: 900;
+  border-radius: 30px;
+  width: 100px;
+  height: 40px;
+  margin-top: 20px;
+}
 a { color: inherit; } 
 
 /* .user-info{
