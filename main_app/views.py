@@ -24,7 +24,7 @@ class Home(TemplateView):
             name = self.request.GET.get('name')
 
             if name != None:
-                context["ekkos"] = Ekko.objects.filter(name__icontains=name)
+                context["ekkos"] = Ekko.objects.filter(source__icontains=name, ekko__icontains=name)
             else:
                 context["ekkos"] = Ekko.objects.all()
                 context['header'] = "Home"
