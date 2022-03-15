@@ -144,27 +144,28 @@
 
 <!-- Widgets -->
 <div class="widget">
+
     <!-- search bar -->
-    <form class="mb-5" method="get">
+    <form class="mb-5 search-bar" method="get">
 
         <div class="field has-addons">
-    
-        <div class="control">
-            <input class="input" type="text" name="name" placeholder="name" />
-        </div>
-    
-        <div class="control">
-            <input class="button search-button" type="submit" value="Search" />
-        </div>
-    
+            <div class="control">
+                <input class="input" type="text" name="name" placeholder="name" />
+            </div>
+        
+            <div class="control">
+                <input class="button search-button" type="submit" value="Search" />
+            </div>
         </div>
   
         <a class="button is-dark" href="{% url 'ekko_list' %}">Clear Search</a>
   
     </form>
-    <div class="widgets_widgetContainer">
+
+    <!-- <div class="widgets_widgetContainer">
         <h2>What's Happening</h2>
-    </div>
+    </div> -->
+
 </div>
 
 

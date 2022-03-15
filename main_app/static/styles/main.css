@@ -217,12 +217,29 @@ a { color: inherit; }
   padding: 20px;
 }
 
+/* widgets */
 .widget{
   flex: 0.3;
 }
 
+.search-bar{
+  /* display: flex;
+  align-items: center; */
+  
+  padding: 10px;
+  border-radius: 20px;
+  margin-top: 10px;
+  margin-left: 20px;
+}
 
+/* .search-bar input{
+  border: none;
+  background-color: var(--ekko-background) ;
+} */
 .search-button{
   background-color: rgba(112,219,203,255);
   border: rgba(112,219,203,255);
 }
+
+
+
