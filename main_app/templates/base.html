@@ -50,11 +50,7 @@
                 </div>
                 </a>
 
-                <!-- User Info -->
-                <div class="sidebarOption user-info">
-                    <h2>{{user.username}}</h2>
-                </div>
-
+                <!-- Log out -->
                 <a href="{% url 'logout' %}">
                 <div class="sidebarOption">
                     <span class="material-icons">logout</span>
@@ -63,6 +59,7 @@
                 </a>
                
             {% else %}
+                <!-- Log in -->
                 <a href="{% url 'login' %}">
                 <div class="sidebarOption">
                     <span class="material-icons">login</span>
@@ -70,6 +67,7 @@
                 </div>
                 </a>    
 
+                <!-- Sign up -->
                 <a href="{% url 'signup' %}">
                 <div class="sidebarOption">
                     <span class="material-icons">person_add</span>                 

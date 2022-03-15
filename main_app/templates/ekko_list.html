@@ -108,6 +108,15 @@
 <!-- Widgets -->
 <div class="widget">
 
+    <!-- User Info -->
+    {% if user.is_authenticated %}
+        <div class="user-info">
+            <h2>Welcome: {{user.username}}</h2>
+        </div>
+    {% else %}
+        <div></div>
+    {% endif %}
+    
     <!-- search bar -->
     <form class="search" method="get">
 

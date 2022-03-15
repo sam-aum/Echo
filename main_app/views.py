@@ -27,6 +27,7 @@ class Home(TemplateView):
 
             if name != None:
                 context["ekkos"] = Ekko.objects.filter(Q(source__icontains=name) | Q(ekko__icontains=name))
+               
             else:
                 context["ekkos"] = Ekko.objects.all()
                 context['header'] = "Home"
@@ -50,8 +51,7 @@ class EkkoList(TemplateView):
         if name != None:
             context['ekkos'] = Ekko.objects.filter(Q(source__icontains=name) | Q(ekko__icontains=name), user=self.request.user)
             context['header'] = f"Results for: {name}"
-    
-      
+
         else:
             # context['ekkos'] = Ekko.objects.all()
             context['ekkos'] = Ekko.objects.filter(user=self.request.user)
