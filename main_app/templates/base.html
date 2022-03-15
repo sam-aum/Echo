@@ -45,7 +45,7 @@
             {% if user.is_authenticated %}
                 <a href="/ekkos">
                 <div class="sidebarOption">
-                    <span class="material-icons"> info </span>
+                    <span class="material-icons">person</span>
                     <h2>Ekkos</h2>                  
                 </div>
                 </a>
@@ -57,17 +57,26 @@
 
                 <a href="{% url 'logout' %}">
                 <div class="sidebarOption">
-                    <span class="material-icons"> info </span>
+                    <span class="material-icons">logout</span>
                     <h2>Logout</h2>
                 </div>
                 </a>
                
             {% else %}
-                <div class="navbar-menu navbar-end">
-                    <a class="navbar-item" href="{% url 'login' %}">Log In</a>
-                        <!--   here is our new link      -->
-                    <a class="navbar-item" href="{% url 'signup' %}">Sign Up</a>
+                <a href="{% url 'login' %}">
+                <div class="sidebarOption">
+                    <span class="material-icons">login</span>
+                    <h2>Login</h2>
                 </div>
+                </a>    
+
+                <a href="{% url 'signup' %}">
+                <div class="sidebarOption">
+                    <span class="material-icons">person_add</span>                 
+                    <h2>Sign Up</h2>
+                </div>
+                </a>
+            
             {% endif %}
 
             <!-- create button -->

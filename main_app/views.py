@@ -48,7 +48,7 @@ class EkkoList(TemplateView):
         name = self.request.GET.get('name')
   
         if name != None:
-            context['ekkos'] = Ekko.objects.filter(source__icontains=name, user=self.request.user)
+            context['ekkos'] = Ekko.objects.filter(Q(source__icontains=name) | Q(ekko__icontains=name), user=self.request.user)
             context['header'] = f"Results for: {name}"
     
       
