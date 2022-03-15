@@ -78,20 +78,19 @@
             <!-- Sourse -->
             <div class="card-source-box">
     
-            <!-- Source Name -->
-            <p class="card-source">{{ekko.source}}</p>
-            
-            <!-- Verification -->
-            <div class="detail__name">
-                {% if ekko.verified_ekko %}
-                <div class="icon-text">
-                <span class="icon has-text-info">
-                    <i class="fas fa-check-circle"></i>
-                </span>
-                <span>Verified</span>
-                </div>
-                {% endif %}
-            </div>
+                <!-- Source Name -->
+                <p class="card-source">
+                    {{ekko.source}}
+                    {% if ekko.verified_ekko %}
+                    
+                    <span class="icon has-text-info">
+                        <i class="fas fa-check-circle"></i>
+                    </span>
+                    <span>Verified</span>
+                    
+                    {% endif %}
+                </p>
+                        
             </div>
     
             <!-- edit and delete buttons -->
@@ -130,11 +129,7 @@
         {% endfor %}
     </div>
 
-
-
-
-
-    </div>
+</div>
 
 
 <!-- Widgets -->
