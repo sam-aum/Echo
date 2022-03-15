@@ -15,52 +15,74 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
         />
         
+        
         <link rel="stylesheet" href="{% static 'styles/main.css' %}" />
         <script src="{% static 'scripts/main.js' %}" defer></script>
+        
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+        
 
-        <title>Echo - {% block title %}{% endblock %}</title>
+        <title>EKKO - {% block title %}{% endblock %}</title>
     </head>
     <body >
-        <nav class="navbar is-black" role="navigation" aria-label="main navigation">
-            
-            <!-- Home -->
-            <div class="navbar-brand">
-                <a class="navbar-item" href="/">Home</a>
-                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                </a>
+        <!-- Sidebar Section -->
+        <div class="sidebar">
+            <a href="/">
+            <div class="sidebarOption active">
+                <span class="material-icons"> home </span>
+                <h2>Home</h2>
             </div>
+            </a>
 
-            <!-- About -->
-            <div class="navbar-menu navbar-start">
-                <a class="navbar-item" href="/about">About</a>
+            <a href="/about">
+            <div class="sidebarOption">
+                <span class="material-icons"> info </span>
+                <h2>About</h2>
             </div>
-            
+            </a>
+
             <!-- Login -->
             {% if user.is_authenticated %}
-                <div class="navbar-menu navbar-end">
-                    <span class="navbar-item">Welcome: {{user.username}}</span>
-                    <a class="navbar-item" href="/ekkos">Ekkos</a>
-                    <a class="navbar-item" href="{% url 'logout' %}">Logout</a>
+                <a href="/ekkos">
+                <div class="sidebarOption">
+                    <span class="material-icons"> info </span>
+                    <h2>Ekkos</h2>                  
                 </div>
+                </a>
+
+                <!-- User Info -->
+                <div class="sidebarOption user-info">
+                    <h2>{{user.username}}</h2>
+                </div>
+
+                <a href="{% url 'logout' %}">
+                <div class="sidebarOption">
+                    <span class="material-icons"> info </span>
+                    <h2>Logout</h2>
+                </div>
+                </a>
+               
             {% else %}
                 <div class="navbar-menu navbar-end">
-                <a class="navbar-item" href="{% url 'login' %}">Log In</a>
-                    <!--   here is our new link      -->
-                <a class="navbar-item" href="{% url 'signup' %}">Sign Up</a>
+                    <a class="navbar-item" href="{% url 'login' %}">Log In</a>
+                        <!--   here is our new link      -->
+                    <a class="navbar-item" href="{% url 'signup' %}">Sign Up</a>
                 </div>
             {% endif %}
-        </nav>
-        <div class="container">
+        </div>
+
+        <!-- Feed Sections -->
+
+        
+
+
+        <!-- <div class="container"> -->
 
             {% block content %}
             
             {% endblock %}
 
-        </div>
-      </div>
-    </div>
+        <!-- </div> -->
+    
   </body>
 </html>

@@ -11,12 +11,24 @@ from django.shortcuts import redirect
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator   
 # from django.contrib import admin
-from .models import Ekko
+from .models import Ekko, Comment
 
 
 # Create your views here.
 class Home(TemplateView):
     template_name = "home.html"
+
+    def get_context_data(self, **kwargs):   
+            context = super().get_context_data(**kwargs)
+            context["ekkos"] = Ekko.objects.all()
+            name = self.request.GET.get('name')
+
+            if name != None:
+                context["ekkos"] = Ekko.objects.filter(name__icontains=name)
+            else:
+                context["ekkos"] = Ekko.objects.all()
+                context['header'] = "Home"
+            return context
 
 class About(TemplateView):
     template_name = "about.html"
@@ -96,3 +108,13 @@ class Signup(View):
         else:
             context = {"form": form}
             return render(request, "registration/signup.html", context)
+
+class CommentCreate(View):
+
+    def post(self, request, pk):
+        user = self.request.user
+        comment = request.POST.get("comment")
+        ekko = Ekko.objects.get(pk=pk)
+        Comment.objects.create(user=user, comment=comment, ekko=ekko)
+        return redirect('ekko_detail', pk=pk)
+

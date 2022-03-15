@@ -3,112 +3,170 @@
 
 {% block content %}
 
-<h1 class="title pt-5">{{ header }}</h1>
 
-<!-- search bar -->
-<form class="mb-5" method="get">
 
-  <div class="field has-addons">
 
-    <div class="control">
-      <input class="input" type="text" name="name" placeholder="name" />
+<!-- Feed -->
+<div class="feed">
+    <div class="feed_header">
+        <h1 class="title pt-5">{{ header }}</h1>
     </div>
 
-    <div class="control">
-      <input class="button search-button" type="submit" value="Search" />
+    <div class="ekkobox">
+        <form>
+            <div class="ekkobox_input">
+                <input type="text" placeholder="What's Happening">
+            </div>
+
+            <!-- create button -->
+            <a class="button  create-button" href="{% url 'ekko_create' %}">Create an Ekko</a>
+        </form>
     </div>
 
-  </div>
 
-  <a class="button is-dark" href="{% url 'ekko_list' %}">Clear Search</a>
-  
-</form>
-
-<!-- create button -->
-<a class="button  create-button" href="{% url 'ekko_create' %}">Create an Ekko</a>
-
-
-
-<!-- Ekko Card -->
-<div class="gallery">
-
-  {% for ekko in ekkos %}
-  <a href="{% url 'ekko_detail' ekko.pk %}">
-    <div class="card">
-      
-      <!-- User -->
-      <div class="card-header">
-        <!-- User Name -->
-        <p class="card-user">{{ekko.user}}</p>
-      </div>
-
-      <!-- Ekko -->
-      <div class="card-quote-box">
-        <!-- <figure class="image is-square"> -->
-          <!-- <img src="{{ekko.image}}" alt="{{ekko.name}}" /> -->
-          <p class="card-quote">{{ekko.ekko}}</p>
-        <!-- </figure> -->
-      </div>
-
-      <!-- Sourse -->
-      <div class="card-source-box">
-
-        <!-- Source Name -->
-        <p class="card-source">{{ekko.source}}</p>
-        
-        <!-- Verification -->
-        <div class="detail__name">
-          {% if ekko.verified_ekko %}
-          <div class="icon-text">
-            <span class="icon has-text-info">
-              <i class="fas fa-check-circle"></i>
-            </span>
-            <span>Verified</span>
-          </div>
-          {% endif %}
+    <!-- Post -->
+    <div class="post">
+        <div class="post_avatar">
+            <!-- image here -->
         </div>
-      </div>
 
-      <!-- edit and delete buttons -->
-      <div class="detail__container">
-        <div class="buttons class-buttons">
-          <a href="{% url 'ekko_delete' ekko.pk %}" class="button is-info is-small">
-            <span class="icon">
-              <i class="far fa-comment"></i>
-            </span>
-          </a>     	
-          <a href="{% url 'ekko_update' ekko.pk %}" class="button is-info is-small">
-            <span class="icon">
-              <i class="fas fa-edit"></i>
-            </span>
-          </a>
-          <a href="{% url 'ekko_delete' ekko.pk %}" class="button is-danger is-small">
-            <span class="icon">
-              <i class="fas fa-trash-alt"></i>
-            </span>
-          </a>
+        <div class="post_body">
+            <div class="post_header">
+                <div class="post_headerText">
+                    <h3>Sam Aum
+                        <span class="post_headerSpecial">
+                            <span class="material-icon post_badge"> verified </span>@Sam Aum
+                        </span>
+                    </h3>
+                </div>
+                <div class="post_headerDescription">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                </div>
+            </div>
+
+            <div class="post_footer">
+                <span >d</span>
+                <span >e</span>
+                <span >f</span>
+                <!-- <span class="material-icons">f</span> -->
+            </div>
         </div>
-      </div>   
+    </div>
+    
+
+    <!-- Ekko Card -->
+    <div class="gallery">
+
+        {% for ekko in ekkos %}
+        <a href="{% url 'ekko_detail' ekko.pk %}">
+        <div class="card">
+            
+            <!-- User -->
+            <div class="card-header">
+            <!-- User Name -->
+            <p class="card-user">{{ekko.user}}</p>
+            </div>
+    
+            <!-- Ekko -->
+            <div class="card-quote-box">
+            <!-- <figure class="image is-square"> -->
+                <!-- <img src="{{ekko.image}}" alt="{{ekko.name}}" /> -->
+                <p class="card-quote">{{ekko.ekko}}</p>
+            <!-- </figure> -->
+            </div>
+    
+            <!-- Sourse -->
+            <div class="card-source-box">
+    
+            <!-- Source Name -->
+            <p class="card-source">{{ekko.source}}</p>
+            
+            <!-- Verification -->
+            <div class="detail__name">
+                {% if ekko.verified_ekko %}
+                <div class="icon-text">
+                <span class="icon has-text-info">
+                    <i class="fas fa-check-circle"></i>
+                </span>
+                <span>Verified</span>
+                </div>
+                {% endif %}
+            </div>
+            </div>
+    
+            <!-- edit and delete buttons -->
+            <div class="detail__container">
+            <div class="buttons class-buttons">
+                <a href="{% url 'ekko_delete' ekko.pk %}" class="button is-info is-small">
+                <span class="icon">
+                    <i class="far fa-comment"></i>
+                </span>
+                </a>     	
+                <a href="{% url 'ekko_update' ekko.pk %}" class="button is-info is-small">
+                <span class="icon">
+                    <i class="fas fa-edit"></i>
+                </span>
+                </a>
+                <a href="{% url 'ekko_delete' ekko.pk %}" class="button is-danger is-small">
+                <span class="icon">
+                    <i class="fas fa-trash-alt"></i>
+                </span>
+                </a>
+            </div>
+            </div>   
+            
+    
+    
+    
+        </div>
+        </a>
+    
+    
         
+    
+    
+        {% empty %}
+        <article class="message">
+        <div class="message-header">
+            <p>No Ekkos Available</p>
+        </div>
+        </article>
+    
+        {% endfor %}
+    </div>
+
+
 
 
 
     </div>
-  </a>
 
 
+<!-- Widgets -->
+<div class="widget">
+    <!-- search bar -->
+    <form class="mb-5" method="get">
+
+        <div class="field has-addons">
+    
+        <div class="control">
+            <input class="input" type="text" name="name" placeholder="name" />
+        </div>
+    
+        <div class="control">
+            <input class="button search-button" type="submit" value="Search" />
+        </div>
+    
+        </div>
   
-
-
-  {% empty %}
-  <article class="message">
-    <div class="message-header">
-      <p>No Ekkos Available</p>
+        <a class="button is-dark" href="{% url 'ekko_list' %}">Clear Search</a>
+  
+    </form>
+    <div class="widgets_widgetContainer">
+        <h2>What's Happening</h2>
     </div>
-  </article>
-
-  {% endfor %}
 </div>
+
 
 
 

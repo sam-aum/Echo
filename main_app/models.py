@@ -23,11 +23,8 @@ class Ekko(models.Model):
 class Comment(models.Model):
 
     user = models.ForeignKey(User, on_delete=models.CASCADE, default=User)
-    ekko = models.TextField(max_length=500)
-    source = models.CharField(max_length=250, default='anonymous')
-    verified_ekko = models.BooleanField(default=False)
-    created_at = models.DateTimeField(auto_now_add=True)   
-    ekko_comment = models.ForeignKey(Ekko, on_delete=models.CASCADE, related_name="songs")
+    comment = models.TextField(max_length=500, default='comment')
+    ekko = models.ForeignKey(Ekko, on_delete=models.CASCADE, related_name="comments")
 
     def __str__(self):
         return self.title

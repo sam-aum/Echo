@@ -1,22 +1,17 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    background-color: #e6ecf0;
-    color: #ffffff;
-    min-height: 100vh;
-  }
-  
-  h1,
-  h2,
-  h3 {
-    color: rgba(112,219,203,255);
-  }
+    --ekko-background: #e6ecf0;
+    --ekko-color: rgba(112,219,203,255);
+}
   
   .container {
     padding: 40px;
     padding-right: 0;
-  }
-  
-  .title {
-    color: #ffffff;
   }
   
   .gallery {
@@ -35,28 +30,14 @@ body {
     z-index: 10;
   }
 
-  img {
-    width: 100%;
-    height: 1000px;
-    object-fit: cover;
-    object-position: top;
-  }
-  
-.create-button{
-    background-color: rgba(112,219,203,255);
-    border: rgba(112,219,203,255);
-    margin-bottom: 20px;
-}
 
-.search-button{
-    background-color: rgba(112,219,203,255);
-    border: rgba(112,219,203,255);
-}
+
+
 
 
 /* user */
 .card-header {
-  padding: 10px;
+  padding: 10px 20px;
 }
 .card-user{
   font-size: 20px;
@@ -75,7 +56,6 @@ body {
 /* source */
 .card-source-box{
     padding: 10px;
-    justify-content: space-between;
 }
 .card-source{
     font-size: 20px;
@@ -84,10 +64,165 @@ body {
 }
 
 .class-buttons{
+  display: flex;
   justify-content: space-between;
   padding: 15px 35px;
 }
 
 
+/* sidebar */
+.sidebarOption{
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.sidebarOption .material-icons{
+  padding: 20px;
+}
+
+.sidebarOption h2{
+  font-weight: 800;
+  font-size: 20px;
+  margin-right: 20px;
+}
+
+.sidebarOption:hover{
+  background-color: var(--ekko-background);
+  border-radius: 30px;
+  color: var(--ekko-color);
+  transition: color 100ms ease-out;
+}
+
+.sidebarOption.active{
+  color: var(--ekko-color);
+}
+
+body{
+  display: flex;
+  height: 100vh;
+  max-width: 1300px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 10px; 
+}
+
+.sidebar {
+  border-right: 1px solid var(--ekko-background);
+  flex: 0.2;
+  min-width: 250px;
+  margin-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+a { color: inherit; } 
+
+/* .user-info{
+
+} */
 
 
+/* Feed */
+.feed{
+  flex: 0.5;
+  border-right: 1px solid var(--ekko-background);
+  min-width: fit-content;
+  overflow-y: scroll;
+}
+
+.feed_header{
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 100;
+  border: 1px solid var(--ekko-background);
+  padding: 15px 20px;
+}
+
+.feed::-webkit-scrollbar {
+  display: none;
+}
+
+.feed {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+
+/* Ekko Box */
+.ekkobox{
+  padding-bottom: 10px;
+  border-bottom: 8px solid var(--ekko-background);;
+  padding-right: 10px
+}
+
+.ekkobox form{
+  display: flex;
+  flex-direction: column;
+}
+
+.ekkobox_input{
+  display: flex;
+  padding: 20px;
+}
+
+.ekkobox_input input{
+  flex: 1;
+  margin-left: 20px;
+  font-size: 20px;
+  border: none;
+  outline: none;
+}
+
+.create-button{
+  background-color: var(--ekko-color);
+  border: none;
+  color: white;
+  font-weight: 900;
+  border-radius: 30px;
+  width: auto;
+  height: 40px;
+  margin-top: 20px;
+  margin-left: auto;
+}
+
+/* post */
+.post{
+  display: flex;
+  align-items: flex-start;
+  border-bottom: 1px solid var(--ekko-background);
+  padding-bottom: 10px;
+}
+
+
+.post_footer{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.post_headerText h3{
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.post_headerDescription{
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+.post_body{
+  flex: 1;
+  padding: 20px;
+}
+
+.widget{
+  flex: 0.3;
+}
+
+
+.search-button{
+  background-color: rgba(112,219,203,255);
+  border: rgba(112,219,203,255);
+}

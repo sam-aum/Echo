@@ -12,5 +12,6 @@ urlpatterns = [
     path('ekkos/<int:pk>/update',views.EkkoUpdate.as_view(), name="ekko_update"),
     path('ekkos/<int:pk>/delete',views.EkkoDelete.as_view(), name="ekko_delete"),
     path('accounts/signup/', views.Signup.as_view(), name="signup"),
+    path('ekkos/<int:pk>/comments/new/', views.CommentCreate.as_view(), name="comment_create"),
     # path('ekkos/<int:pk>/comment',views.EkkoComment.as_view(), name="ekko_comment"),
 ]

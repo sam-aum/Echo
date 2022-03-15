@@ -49,9 +49,14 @@
       <div class="card-source-box">
 
         <!-- Source Name -->
-        <p class="card-source">{{ekko.source}}</p>
+        <h2 class="card-source">
+          {{ekko.source}}
+          <span class="post_headerSpecial">
+            <span class="material-icon post_badge"> verified </span>
+          </span>
+        </h2>
         
-        <!-- Verification -->
+        <!-- Verification
         <div class="detail__name">
           {% if ekko.verified_ekko %}
           <div class="icon-text">
@@ -61,39 +66,32 @@
             <span>Verified</span>
           </div>
           {% endif %}
-        </div>
+        </div> -->
       </div>
 
       <!-- edit and delete buttons -->
-      <div class="detail__container">
-        <div class="buttons class-buttons">
-          <a href="{% url 'ekko_delete' ekko.pk %}" class="button is-info is-small">
-            <span class="icon">
-              <i class="far fa-comment"></i>
-            </span>
-          </a>     	
-          <a href="{% url 'ekko_update' ekko.pk %}" class="button is-info is-small">
-            <span class="icon">
-              <i class="fas fa-edit"></i>
-            </span>
-          </a>
-          <a href="{% url 'ekko_delete' ekko.pk %}" class="button is-danger is-small">
-            <span class="icon">
-              <i class="fas fa-trash-alt"></i>
-            </span>
-          </a>
-        </div>
-      </div>   
-        
+      <div class="class-buttons">
+        <a href="{% url 'ekko_delete' ekko.pk %}" class="is-comment is-medium">
+          <span class="icon">
+            <i class="far fa-comment"></i>
+          </span>
+        </a>     	
+        <a href="{% url 'ekko_update' ekko.pk %}" class="is-info is-medium">
+          <span class="icon">
+            <i class="fas fa-edit"></i>
+          </span>
+        </a>
+        <a href="{% url 'ekko_delete' ekko.pk %}" class="is-danger is-medium">
+          <span class="icon">
+            <i class="fas fa-trash-alt"></i>
+          </span>
+        </a>
+      </div>
 
 
 
     </div>
   </a>
-
-
-  
-
 
   {% empty %}
   <article class="message">

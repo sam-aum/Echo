@@ -59,4 +59,51 @@
 </div>
 
 
+
+<form class="mb-5" action="{% url 'comment_create' ekko.pk %}" method="post">
+    {% csrf_token %}
+    <div class="field has-addons">
+        <div class="control">
+            <input
+                class="input"
+                type="text"
+                name="comment"
+                placeholder="comment"
+                required
+            />
+        </div>
+      
+        <div class="control">
+            <input class="button is-primary" type="submit" value="Add Comment" />
+        </div>
+    </div>
+</form>
+
+
+{% for comment in ekko.comments.all %}
+<div class="gallery">
+    <div class="card">
+
+        <!-- User -->
+        <div class="card-header">
+            <!-- User Name -->
+            <p class="card-user">{{comment.user}}</p>
+        </div>
+
+        <!-- Ekko -->
+        <div class="card-quote-box">
+            <p class="card-quote">{{comment.comment}}</p>
+        </div>
+
+        {% empty %}
+        <article class="message">
+          <div class="message-header">
+            <p>No Comment Available</p>
+          </div>
+        </article>
+
+    </div>
+</div>
+{% endfor %}
+
 {% endblock %}
