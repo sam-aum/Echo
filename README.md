@@ -2,7 +2,7 @@
 https://polar-fjord-22205.herokuapp.com/
 
 ## Description
-- Echo allows users to create an account, write and save quotes, and share them with others 
+- Echo allows users to create an account, write and save quotes, and share them with others. The User can also comment on the quotes of others.  The User can search for quotes by source or content
 
 
 ## MVP
