@@ -63,7 +63,7 @@ class EkkoList(TemplateView):
 
 class EkkoCreate(CreateView):
     model = Ekko
-    fields = ['user', 'ekko', 'source', 'verified_ekko']
+    fields = ['ekko', 'source', 'verified_ekko']
     template_name = "ekko_create.html"
 
     def form_valid(self, form):
