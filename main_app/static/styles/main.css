@@ -9,59 +9,6 @@ body {
     --ekko-color: rgba(112,219,203,255);
 }
   
-.container {
-  padding: 40px;
-  padding-right: 0;
-}
-
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-  justify-content: center;
-  gap: 30px;
-}
-
-.gallery .card {
-  transition: 0.1s linear;
-}
-
-.gallery .card:hover {
-  transform: scale(1.1);
-  z-index: 10;
-}
-
-
-
-
-
-
-/* user */
-.card-header {
-  padding: 10px 20px;
-}
-.card-user{
-  font-size: 22px;
-  font-weight: bold;
-}
-
-/* quote */
-.card-quote-box {
-    padding: 20px;
-}
-.card-quote{
-    font-size: 20px;
-    font-family: "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;
-}
-
-/* source */
-.card-source-box{
-    padding: 10px 20px;
-}
-.card-source{
-    font-size: 20px;
-    font-weight: bold;
-    font-style: oblique;
-}
 
 
 
@@ -131,6 +78,12 @@ body{
 
 
 
+.gallery{
+  display: flex;
+  justify-content: center;
+  max-width: 750px;
+  gap: 30px;
+}
 
 
 /* Feed */
@@ -209,6 +162,7 @@ body{
   align-items: flex-start;
   border-bottom: 1px solid var(--ekko-background);
   padding-bottom: 10px;
+  max-width: 600px;
 }
 
 
@@ -233,6 +187,72 @@ body{
   padding: 20px;
 }
 
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  justify-content: center;
+  gap: 30px;
+}
+
+.gallery .card {
+  transition: 0.1s linear;
+}
+
+.gallery .card:hover {
+  /* transform: scale(1.1); */
+  z-index: 10;
+}
+
+
+/* user */
+.card-header {
+  padding: 10px 20px;
+}
+.card-user{
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* quote */
+.card-quote-box {
+    padding: 20px;
+}
+.card-quote{
+    font-size: 20px;
+    font-family: "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;
+}
+
+
+/* source */
+.card-source-box{
+    padding: 10px 20px;
+}
+.card-source{
+    font-size: 20px;
+    font-weight: bold;
+    font-style: oblique;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* widgets */
 .widget{
   flex: 0.2;
@@ -256,7 +276,7 @@ body{
   margin-top: 40px;
   margin-left: 20px;
   width: auto;
-  height: 60px;
+  height: 40px;
 }
 
 .search-bar input{

@@ -23,11 +23,11 @@
         </form>
     </div>
 
-
-    <!-- Post -->
+<!-- 
+    Post
     <div class="post">
         <div class="post_avatar">
-            <!-- image here -->
+            image here
         </div>
 
         <div class="post_body">
@@ -40,19 +40,28 @@
                     </h3>
                 </div>
                 <div class="post_headerDescription">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <p>Lorem ipsum dolor sit amet casdf asdf asdf asd asd asdf asdf asdf asdf asdf asdf asdf asdf asdfasdfas fasd asdf asdf asdf asdf asdf asdf asdf asdfonsectetur adipisicing elit.</p>
                 </div>
             </div>
-
-            <div class="post_footer">
-                <span >d</span>
-                <span >e</span>
-                <span >f</span>
-                <!-- <span class="material-icons">f</span> -->
+            {% for ekko in ekkos %}
+            <div class="class-buttons">
+                comment
+                <a href="{% url 'ekko_delete' ekko.pk %}">
+                    <span class="material-icons">chat_bubble_outline</span>
+                </a>     	
+                bookmark
+                <a href="{% url 'ekko_update' ekko.pk %}">
+                    <span class="material-icons">bookmark_border</span>
+                </a>  
+                like
+                <a href="{% url 'ekko_update' ekko.pk %}">
+                <span class="material-icons">favorite_border</span>
+                </a>  
             </div>
+            {% endfor %}
         </div>
-    </div>
-    
+    </div>  
+-->
 
     <!-- Ekko Card -->
     <div class="gallery">
