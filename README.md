@@ -11,6 +11,7 @@
     - Quote 
     - Citation
     - CRUD
+- search bar for quotes
     
 
 ## Stretch Goals
