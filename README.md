@@ -46,6 +46,8 @@ https://polar-fjord-22205.herokuapp.com/
 - Postgresql
 - FlexBox
 - Heroku
+- HTML
+- CSS
 
 
 ## Models
