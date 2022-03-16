@@ -294,3 +294,48 @@ body{
   margin-top: 20px;
   width: 750px;
 }
+
+.comment-box{
+  margin-top: 70px;
+  padding-bottom: 10px;
+  border-bottom: 8px solid var(--ekko-background);;
+  padding-right: 10px
+}
+
+.comment-box form{
+  display: flex;
+  flex-direction: column;
+}
+
+.comment-input{
+  display: flex;
+  padding: 20px;
+}
+
+.comment-input input{
+  flex: 1;
+  margin-left: 20px;
+  font-size: 20px;
+  border: none;
+  outline: none;
+}
+
+.comment-button{
+  background-color: var(--ekko-color);
+  border: none;
+  color: white;
+  font-weight: 900;
+  border-radius: 30px;
+  width: auto;
+  height: 40px;
+  margin-top: 20px;
+  margin-left: auto;
+}
+
+.comment-gallery{
+  gap: 30px;
+}
+
+
+
+
