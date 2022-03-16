@@ -1,110 +1,108 @@
 {% extends 'base.html' %} 
 
 {% block content %}
- 
-<div class="gallery-detail">
-    <div class="card-detail">
+<div class="feed">
+    <div class="feed_header">
+        <a href="/">
+            <span class="material-icons">arrow_back</span>
+        </a>
+        <h1 class="title pt-5">Home</h1>
+        
+    </div>
 
-        <!-- User -->
-        <div class="card-header">
-            <!-- User Name -->
-            <p class="card-user">{{ekko.user}}</p>
-        </div>
+    <div class="gallery-detail">
+        <div class="card-detail">
 
-        <!-- Ekko -->
-        <div class="card-quote-box">
-            <p class="card-quote">{{ekko.ekko}}</p>
-        </div>
+            <!-- User -->
+            <div class="card-header">
+                <!-- User Name -->
+                <p class="card-user">{{ekko.user}}</p>
+            </div>
 
-        <!-- Sourse -->
-        <div class="card-source-box">
+            <!-- Ekko -->
+            <div class="card-quote-box">
+                <p class="card-quote">{{ekko.ekko}}</p>
+            </div>
 
-            <!-- Source Name -->
-            <p class="card-source">{{ekko.source}}</p>
-            
-            <!-- Verification -->
-            <div class="detail__name">
-                {% if ekko.verified_ekko %}
-                <div class="icon-text">
+            <!-- Sourse -->
+            <div class="card-source-box">
+        
+                <!-- Source Name -->
+                <p class="card-source">
+                    {{ekko.source}}
+
+                    {% if ekko.verified_ekko %}
                     <span class="icon has-text-info">
-                    <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-check-circle"></i>
                     </span>
-                    <span>Verified</span>
-                </div>
-                {% endif %}
+
+                    <!-- <span>Verified</span> -->
+                    {% endif %}
+                </p>
+                        
             </div>
 
-        </div>
-
-        <!-- edit and delete buttons -->
-        <div class="detail__container">
-            <div class="buttons class-buttons">
-            <a href="{% url 'ekko_delete' ekko.pk %}" class="button is-info is-small">
-                <span class="icon">
-                <i class="far fa-comment"></i>
-                </span>
-            </a>     	
-            <a href="{% url 'ekko_update' ekko.pk %}" class="button is-info is-small">
-                <span class="icon">
-                <i class="fas fa-edit"></i>
-                </span>
-            </a>
-            <a href="{% url 'ekko_delete' ekko.pk %}" class="button is-danger is-small">
-                <span class="icon">
-                <i class="fas fa-trash-alt"></i>
-                </span>
-            </a>
-            </div>
-    </div>
-</div>
-
-
-<!-- Comment form -->
-<div class="comment-box">
-    <form class="mb-5 comment-form" action="{% url 'comment_create' ekko.pk %}" method="post">
-        {% csrf_token %}
         
-            <div class="comment-input">
-                <input
-                    class="input"
-                    type="text"
-                    name="comment"
-                    placeholder="comment"
-                    required
-                />
-            </div>
+    </div>
+
+
+    <!-- Comment form -->
+    <div class="comment-box">
+        <form class="mb-5 comment-form" action="{% url 'comment_create' ekko.pk %}" method="post">
+            {% csrf_token %}
             
-            <input class="button comment-button" type="submit" value="Add Comment" />
-        
-    </form>
-</div>
-
-
-<!-- Comment Display -->
-{% for comment in ekko.comments.all %}
-<div class="gallery comment-gallery">
-    <div class="card">
-
-        <!-- User -->
-        <div class="card-header">
-            <!-- User Name -->
-            <p class="card-user">{{comment.user}}</p>
-        </div>
-
-        <!-- Ekko -->
-        <div class="card-quote-box">
-            <p class="card-quote">{{comment.comment}}</p>
-        </div>
-
-        {% empty %}
-        <article class="message">
-          <div class="message-header">
-            <p>No Comment Available</p>
-          </div>
-        </article>
-
+                <div class="comment-input">
+                    <input
+                        class="input"
+                        type="text"
+                        name="comment"
+                        placeholder="comment"
+                        required
+                    />
+                </div>
+                
+                <input class="button comment-button" type="submit" value="Add Comment" />
+            
+        </form>
     </div>
-</div>
-{% endfor %}
 
+
+    <!-- Comment Display -->
+    {% for comment in ekko.comments.all %}
+    <div class="gallery comment-gallery">
+        <div class="card">
+
+            <!-- User -->
+            <div class="card-header">
+                <!-- User Name -->
+                <p class="card-user">{{comment.user}}</p>
+            </div>
+
+            <!-- Ekko -->
+            <div class="card-quote-box">
+                <p class="card-quote">{{comment.comment}}</p>
+            </div>
+
+            <div class="comment-icons">
+                <!-- edit -->
+                <a href="{% url 'ekko_update' ekko.pk %}">
+                    <span class="material-icons">edit</span>
+                </a>
+                <!-- delete -->
+                <a href="{% url 'ekko_delete' ekko.pk %}">
+                    <span class="material-icons">delete</span>
+                </a>
+            </div>
+            {% empty %}
+            <article class="message">
+            <div class="message-header">
+                <p>No Comment Available</p>
+            </div>
+            </article>
+
+        </div>
+    </div>
+    {% endfor %}
+
+</div> 
 {% endblock %}
