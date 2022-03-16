@@ -1,15 +1,19 @@
 {% extends 'base.html' %} 
 
 {% block content %}
-<h1>Create an Ekko</h1>
-
-<form method="post">
-  <!-- Security Feature  -->
-  {% csrf_token %}
-  <!--  Generate inputs  -->
-  {{form.as_p}}
-  <!--  Submit form  -->
-  <input type="submit" value="Submit" />
-</form>
-
+<div class="feed">
+  <div class="feed_header">
+      <h1 class="title pt-5">Create an Ekko</h1>
+  </div>
+  <div class="ekkobox login-form">
+    <form method="post">
+      <!-- Security Feature  -->
+      {% csrf_token %}
+      <!--  Generate inputs  -->
+      {{form.as_p}}
+      <!--  Submit form  -->
+      <input type="submit" class="button create-button" value="Submit" />
+    </form>
+  </div>
+</div>
 {% endblock %}
