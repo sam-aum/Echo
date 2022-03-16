@@ -346,6 +346,10 @@ body{
   outline: none;
 }
 
+.comment-icons{
+  padding: 10px;
+}
+
 .comment-button{
   background-color: var(--ekko-color);
   border: none;
@@ -356,6 +360,7 @@ body{
   height: 40px;
   margin-top: 20px;
   margin-left: auto;
+  
 }
 
 .comment-gallery{
