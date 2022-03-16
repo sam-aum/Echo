@@ -13,13 +13,18 @@
     </div>
 
     <div class="ekkobox">
-        <form>
+        <form class="" action="{% url 'ekko_create' %}" method="post">
+            {% csrf_token %}
             <div class="ekkobox_input">
-                <input type="text" placeholder="Quote Here">
+                <input 
+                    type="text" 
+                    placeholder="Quote Here"
+                />
             </div>
 
+            <input class="button create-button" type="submit" value="Create an Ekko" />
             <!-- create button -->
-            <a class="button  create-button" href="{% url 'ekko_create' %}">Create an Ekko</a>
+            <!-- <a class="button  create-button" href="{% url 'ekko_create' %}">Create an Ekko</a> -->
         </form>
     </div>
 

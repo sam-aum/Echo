@@ -15,12 +15,14 @@
 
 ## Stretch Goals
 - Public quote area
-    - Able to follow people ?
+    - Able to follow people
     - See followed people’s quotes
 - Comment section 
+- Bookmark section
 - Like section
 - Save section
 - Organize Quotes 
+- About Page
 
 
 ## Login Page
