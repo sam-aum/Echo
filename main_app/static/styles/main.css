@@ -190,7 +190,7 @@ body{
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(750px, 1fr));
   justify-content: center;
   gap: 30px;
 }
@@ -233,22 +233,6 @@ body{
     font-weight: bold;
     font-style: oblique;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -305,4 +289,8 @@ body{
 }
 
 
-
+/* Detail */
+.gallery-detail {
+  margin-top: 20px;
+  width: 750px;
+}
