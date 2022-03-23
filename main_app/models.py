@@ -12,6 +12,7 @@ class Ekko(models.Model):
     source = models.CharField(max_length=250, default='anonymous')
     verified_ekko = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
+    # like = models.ManyToManyField(User, related_name='likes')
    
 
     def __str__(self):

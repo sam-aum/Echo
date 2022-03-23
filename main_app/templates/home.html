@@ -3,9 +3,6 @@
 
 {% block content %}
 
-
-
-
 <!-- Feed -->
 <div class="feed">
     <div class="feed_header">
@@ -70,7 +67,7 @@
 
     <!-- Ekko Card -->
     <div class="gallery">
-
+        
         {% for ekko in ekkos %}
         <a href="{% url 'ekko_detail' ekko.pk %}">
         <div class="card">
@@ -133,6 +130,7 @@
         </article>
     
         {% endfor %}
+        
     </div>
 
 </div>

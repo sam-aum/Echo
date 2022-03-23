@@ -3,12 +3,6 @@
 
 {% block content %}
 
-
-
-
-
-
-
 <!-- Feed -->
 <div class="feed">
     <div class="feed_header">
@@ -17,12 +11,17 @@
 
     <div class="ekkobox">
         <form>
+
             <div class="ekkobox_input">
-                <input type="text" placeholder="What's Happening">
+                <input 
+                    type="text" 
+                    placeholder="Quote Here"
+                />
             </div>
 
             <!-- create button -->
             <a class="button  create-button" href="{% url 'ekko_create' %}">Create an Ekko</a>
+            
         </form>
     </div>
 

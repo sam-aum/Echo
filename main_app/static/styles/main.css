@@ -10,31 +10,7 @@ body {
 }
   
 
-.about-info{
-  margin: 20px;
-}
-
-.login-form{
-  padding: 20px;
-}
-
 /* sidebar */
-.hourglass{
-  display: flex;
-  align-items: center;
-  color: var(--ekko-color);
-  font-size: 40px;
-  justify-content: center;
-  padding: 20px;
-  margin-bottom: 40px;
-}
-
-.hourglass .icon{
-  font-weight: 800;
-  font-size: 50px;
-}
-
-a { color: inherit; } 
 
 .sidebarOption{
   display: flex;
@@ -96,14 +72,34 @@ body{
   padding-right: 20px;
 }
 
+a { color: inherit; } 
 
-
-.gallery{
+.hourglass{
   display: flex;
+  /* align-items: flex-end; */
+  color: var(--ekko-color);
+  min-height: 100px;
+  font-size: 40px;
   justify-content: center;
-  max-width: 750px;
-  gap: 30px;
+  padding: 20px;
 }
+
+.hourglass .icon{
+  font-weight: 800;
+  font-size: 50px;
+}
+
+.about-info{
+  margin: 20px;
+}
+
+.login-form{
+  padding: 20px;
+}
+
+
+
+
 
 
 /* Feed */
@@ -131,6 +127,7 @@ body{
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
 
 
 /* Ekko Box */
@@ -177,7 +174,7 @@ body{
 }
 
 /* post */
-.post{
+/* .post{
   display: flex;
   align-items: flex-start;
   border-bottom: 1px solid var(--ekko-background);
@@ -205,15 +202,23 @@ body{
 .post_body{
   flex: 1;
   padding: 20px;
+} */
+
+
+.gallery{
+  display: flex;
+  justify-content: center;
+  max-width: 750px;
+  gap: 30px;
 }
 
 
-.gallery {
+/* .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(750px, 1fr));
   justify-content: center;
   gap: 30px;
-}
+} */
 
 .gallery .card {
   transition: 0.1s linear;
@@ -223,6 +228,8 @@ body{
   /* transform: scale(1.1); */
   z-index: 10;
 }
+
+
 
 
 /* user */
@@ -374,5 +381,3 @@ body{
   display: flex;
   justify-content: space-around;
 }
-
-

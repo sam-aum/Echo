@@ -62,7 +62,7 @@
                 </div>
                 
                 <input class="button comment-button" type="submit" value="Add Comment" />
-            
+
         </form>
     </div>
 
@@ -93,16 +93,20 @@
                     <span class="material-icons">delete</span>
                 </a>
             </div>
+
             {% empty %}
+
             <article class="message">
-            <div class="message-header">
-                <p>No Comment Available</p>
-            </div>
+                <div class="message-header">
+                    <p>No Comment Available</p>
+                </div>
             </article>
 
         </div>
     </div>
+
     {% endfor %}
 
 </div> 
+
 {% endblock %}
