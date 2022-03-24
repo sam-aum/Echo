@@ -38,10 +38,6 @@ body {
 .sidebarOption.active{
   color: var(--ekko-color);
 }
-/* 
-a:active{
-  color: var(--ekko-color);
-} */
 
 .create-button-side{
   background-color: var(--ekko-color);
@@ -127,7 +123,7 @@ a { color: inherit; }
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
-
+/* Feed Ends*/
 
 
 /* Ekko Box */
@@ -167,44 +163,10 @@ a { color: inherit; }
   margin-left: auto;
 }
 
-.class-buttons{
-  display: flex;
-  justify-content: space-around;
-  padding: 10px;
-}
-
-/* post */
-/* .post{
-  display: flex;
-  align-items: flex-start;
-  border-bottom: 1px solid var(--ekko-background);
-  padding-bottom: 10px;
-  max-width: 600px;
-}
+/* Ekko Box Ends */
 
 
-.post_footer{
-  display: flex;
-  justify-content: space-between;
-  margin-top: 10px;
-}
-
-.post_headerText h3{
-  font-size: 15px;
-  margin-bottom: 5px;
-}
-
-.post_headerDescription{
-  margin-bottom: 10px;
-  font-size: 15px;
-}
-
-.post_body{
-  flex: 1;
-  padding: 20px;
-} */
-
-
+/* Gallery */
 .gallery{
   display: flex;
   justify-content: center;
@@ -213,12 +175,12 @@ a { color: inherit; }
 }
 
 
-/* .gallery {
+.gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(750px, 1fr));
   justify-content: center;
   gap: 30px;
-} */
+}
 
 .gallery .card {
   transition: 0.1s linear;
@@ -228,8 +190,6 @@ a { color: inherit; }
   /* transform: scale(1.1); */
   z-index: 10;
 }
-
-
 
 
 /* user */
@@ -261,10 +221,18 @@ a { color: inherit; }
     font-style: oblique;
 }
 
+/* icons */
+.class-buttons{
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+/* Gallery Ends*/
 
 
 
-/* widgets */
+/* Widgets */
 .widget{
   flex: 0.2;
 }
@@ -314,6 +282,9 @@ a { color: inherit; }
   background-color: rgba(112,219,203,255);
   border: none;
 }
+
+/* Widgets Ends */
+
 
 
 /* Detail */
@@ -381,3 +352,38 @@ a { color: inherit; }
   display: flex;
   justify-content: space-around;
 }
+
+/* Detail ends */
+
+
+
+/* post */
+/* .post{
+  display: flex;
+  align-items: flex-start;
+  border-bottom: 1px solid var(--ekko-background);
+  padding-bottom: 10px;
+  max-width: 600px;
+}
+
+
+.post_footer{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.post_headerText h3{
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.post_headerDescription{
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+
+.post_body{
+  flex: 1;
+  padding: 20px;
+} */
