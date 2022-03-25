@@ -13,5 +13,6 @@ urlpatterns = [
     path('ekkos/<int:pk>/delete',views.EkkoDelete.as_view(), name="ekko_delete"),
     path('accounts/signup/', views.Signup.as_view(), name="signup"),
     path('ekkos/<int:pk>/comments/new/', views.CommentCreate.as_view(), name="comment_create"),
+    path('like/', views.LikePost.as_view(), name='like_post'),
     # path('ekkos/<int:pk>/comment',views.EkkoComment.as_view(), name="ekko_comment"),
 ]

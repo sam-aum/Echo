@@ -13,14 +13,14 @@ from django.utils.decorators import method_decorator
 from django.db.models import Q
 
 # from django.contrib import admin
-from .models import Ekko, Comment
+from .models import Ekko, Comment, Like
 
 
 # Create your views here.
 class Home(TemplateView):
     template_name = "home.html"
 
-    def get_context_data(self, **kwargs):   
+    def get_context_data(self, **kwargs):  
             context = super().get_context_data(**kwargs)
             context["ekkos"] = Ekko.objects.all()
             name = self.request.GET.get('name')
@@ -120,3 +120,7 @@ class CommentCreate(View):
         Comment.objects.create(user=user, comment=comment, ekko=ekko)
         return redirect('ekko_detail', pk=pk)
 
+class LikePost(View):
+
+    def post(request):
+        return redirect('ekko_list')

@@ -116,6 +116,20 @@
                 <a href="{% url 'ekko_update' ekko.pk %}">
                 <span class="material-icons">favorite_border</span>
                 </a>  
+
+                <!-- Like Button -->
+                <form action="{% url 'like_post'%}" method="POST" class="ui form">
+                    {%csrf_token%}
+                    <input type="hidden" name="ekko_id" value="{{ekko.id}}">
+                    {% if user not in ekko.liked.all %}
+                        <button class="ui button positive" type="submit">Like</button>
+                    {% else %}
+                        <button class="ui button negative" type="submit">Unlike</button>
+                    {% endif %}
+                </form>
+                <!-- Like Counter -->
+                <strong>{{ekko.liked.all.count}} likes</strong>
+
             </div>
             
         </div>
